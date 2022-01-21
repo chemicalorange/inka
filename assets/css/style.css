@@ -365,6 +365,7 @@ section {
 .banner__content {
   text-align: start;
   max-width: 500px;
+  width: 100%;
   position: relative;
   opacity: 0;
   -webkit-transform: translateY(20px);
