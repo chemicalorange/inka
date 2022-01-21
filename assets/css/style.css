@@ -553,6 +553,9 @@ section {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  position: relative;
+  gap: 41px 20px;
+  margin-bottom: 41px;
 }
 
 .one-app__brands-item {
@@ -567,77 +570,100 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 41px;
   border: 1px solid #E5E5E5;
   border-radius: 5px;
   position: relative;
 }
 
-.one-app__brands-item:nth-child(1) {
+.one-app__brands-item:nth-child(2) {
   background: #53DEE9;
   -webkit-transform: rotate(-7.52deg) translateY(-20px) translateX(-20px);
           transform: rotate(-7.52deg) translateY(-20px) translateX(-20px);
 }
 
-.one-app__brands-item:nth-child(2) {
+.one-app__brands-item:nth-child(3) {
   -webkit-transform: rotate(4.82deg) translateY(10px);
           transform: rotate(4.82deg) translateY(10px);
 }
 
-.one-app__brands-item:nth-child(3) {
+.one-app__brands-item:nth-child(4) {
   -webkit-transform: rotate(-4.57deg);
           transform: rotate(-4.57deg);
 }
 
-.one-app__brands-item:nth-child(3), .one-app__brands-item:nth-child(7) {
+.one-app__brands-item:nth-child(4), .one-app__brands-item:nth-child(8) {
   background: #1E1E1E;
 }
 
-.one-app__brands-item:nth-child(4) {
+.one-app__brands-item:nth-child(9) {
   background: linear-gradient(244.69deg, #B5519F 1.21%, #35B6C5 99.91%);
   -webkit-transform: rotate(5.66deg);
           transform: rotate(5.66deg);
 }
 
-.one-app__brands-item:nth-child(5) {
+.one-app__brands-item:nth-child(6) {
   background: #2081E2;
 }
 
-.one-app__brands-item:nth-child(6) {
+.one-app__brands-item:nth-child(7) {
   background: #FEDA03;
   -webkit-transform: rotate(6.55deg);
           transform: rotate(6.55deg);
 }
 
-.one-app__brands-item:nth-child(7) {
+.one-app__brands-item:nth-child(8) {
   -webkit-transform: rotate(2.9deg);
           transform: rotate(2.9deg);
 }
 
-.one-app__brands-item:nth-child(8) {
+.one-app__brands-item:nth-child(9) {
   -webkit-transform: rotate(7.98deg);
           transform: rotate(7.98deg);
 }
 
-.one-app__brands-item:nth-child(9) {
+.one-app__brands-item:nth-child(10) {
   background: #F5BB50;
   -webkit-transform: rotate(-11.28deg) translateY(-20px);
           transform: rotate(-11.28deg) translateY(-20px);
 }
 
-.one-app__brands-item:nth-child(10) {
+.one-app__brands-item:nth-child(11) {
   -webkit-transform: rotate(9.32deg);
           transform: rotate(9.32deg);
 }
 
-.one-app__brands-item:nth-child(11) {
+.one-app__brands-item:nth-child(12) {
   -webkit-transform: rotate(7.98deg) translateY(-20px);
           transform: rotate(7.98deg) translateY(-20px);
 }
 
-.one-app__brands-item:nth-child(12) {
+.one-app__brands-item:nth-child(13) {
   -webkit-transform: rotate(-10.85deg);
           transform: rotate(-10.85deg);
+}
+
+.one-app__logo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.one-app__logo img {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  opacity: 0;
 }
 
 .one-app__reviews {
@@ -661,6 +687,7 @@ section {
   border-radius: 5px;
   padding: 32px 16px;
   background: #fff;
+  z-index: 10;
 }
 
 .one-app__reviews .item__info {
@@ -718,6 +745,8 @@ section {
 
 .one-app__description {
   margin-top: 22px;
+  opacity: 0;
+  position: relative;
 }
 
 .one-app__description .description {
