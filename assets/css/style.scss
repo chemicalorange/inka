@@ -22,6 +22,10 @@ a{
     text-decoration: none;
 }
 
+li{
+    list-style: none;
+}
+
 $violet : #7171FF;
 
 .wrapper{
@@ -687,5 +691,64 @@ section{
 .footer{
     &__top{
         padding: 80px 0;
+
+        .container{
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+    }
+    &__title{
+       margin-bottom: 29.5px;
+    }
+
+    &__social li a:last-child{
+        margin-left: 33px;
+    }
+
+    &__social a{
+        color: #556174;
+        font-size: 18px;
+    }
+
+    &__list-item{
+        margin-bottom: 24px;
+        font-size: 14px;
+
+        a{
+            color: #778190;
+        }
+    }
+}
+
+@media screen and (max-width:710px) {
+    .footer{
+        &__top .container{
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .logo{
+            margin-bottom: 40px;
+        }
+
+        &__social{ 
+        width: 100%;
+        max-width: 228px;
+        div{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+
+            li{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            }
+            .footer__list-item a{
+                margin: 0;
+            }
+        }
+    }
     }
 }
