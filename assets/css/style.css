@@ -453,6 +453,14 @@ section {
   color: #7171FF;
 }
 
+.banner__buttons {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+}
+
 .banner_blue {
   background: #7171FF;
 }
@@ -490,6 +498,7 @@ section {
           justify-content: space-between;
   width: 100%;
   margin-bottom: 24px;
+  gap: 22px;
 }
 
 .two-banners .banner {
@@ -521,8 +530,17 @@ section {
   .two-banners .banner {
     max-width: none;
   }
-  .two-banners .banner:not(:last-child) {
-    margin-bottom: 32px;
+}
+
+@media screen and (max-width: 530px) {
+  .banner {
+    padding: 32px;
+  }
+  .banner__suptitle {
+    font-size: 12px;
+  }
+  .banner__title {
+    font-size: 25px;
   }
 }
 
@@ -789,6 +807,70 @@ section {
           align-items: center;
 }
 
+.use-all-benefits .banner {
+  padding: 0;
+  border-radius: 0;
+}
+
+.use-all-benefits .banner__image {
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  position: relative;
+}
+
+.use-all-benefits .banner__image img {
+  height: 100%;
+}
+
+.use-all-benefits .container {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+@media screen and (max-width: 854px) {
+  .use-all-benefits .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .use-all-benefits .banner {
+    padding-top: 31px;
+  }
+  .use-all-benefits .banner__image {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .use-all-benefits .banner__image img {
+    width: 100%;
+    height: 100%;
+  }
+  .use-all-benefits .banner__title, .use-all-benefits .banner__subtitle {
+    text-align: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .use-all-benefits .banner__buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .footer__top {
   padding: 80px 0;
 }
@@ -839,6 +921,9 @@ section {
   }
   .footer .logo {
     margin-bottom: 40px;
+  }
+  .footer__title {
+    margin-top: 20px;
   }
   .footer__social {
     width: 100%;
