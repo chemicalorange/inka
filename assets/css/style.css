@@ -562,6 +562,8 @@ section {
 
 .one-app__brands {
   width: 100%;
+  height: calc(100vw/2);
+  max-height: 445px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -571,13 +573,12 @@ section {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   position: relative;
-  gap: 41px 20px;
   margin-bottom: 41px;
 }
 
 .one-app__brands-item {
-  width: 222px;
-  height: 121px;
+  width: calc(100% / 4.2);
+  height: calc(100% / 3.2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -587,25 +588,36 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid #E5E5E5;
   border-radius: 5px;
   position: relative;
 }
 
+.one-app__brands-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #7171FF;
+  opacity: 0;
+}
+
 .one-app__brands-item:nth-child(2) {
   background: #53DEE9;
-  -webkit-transform: rotate(-7.52deg) translateY(-20px) translateX(-20px);
-          transform: rotate(-7.52deg) translateY(-20px) translateX(-20px);
+  -webkit-transform: rotate(-7.52deg) translateY(-40px) translateX(-40px);
+          transform: rotate(-7.52deg) translateY(-40px) translateX(-40px);
 }
 
 .one-app__brands-item:nth-child(3) {
-  -webkit-transform: rotate(4.82deg) translateY(10px);
-          transform: rotate(4.82deg) translateY(10px);
+  -webkit-transform: rotate(4.82deg) translateY(-30px);
+          transform: rotate(4.82deg) translateY(-30px);
+  border: 1px solid #E5E5E5;
 }
 
 .one-app__brands-item:nth-child(4) {
-  -webkit-transform: rotate(-4.57deg);
-          transform: rotate(-4.57deg);
+  -webkit-transform: rotate(-4.57deg) translateY(-30px);
+          transform: rotate(-4.57deg) translateY(-30px);
 }
 
 .one-app__brands-item:nth-child(4), .one-app__brands-item:nth-child(8) {
@@ -655,8 +667,8 @@ section {
 }
 
 .one-app__brands-item:nth-child(13) {
-  -webkit-transform: rotate(-10.85deg);
-          transform: rotate(-10.85deg);
+  -webkit-transform: rotate(-10.85deg) translateY(30px);
+          transform: rotate(-10.85deg) translateY(30px);
 }
 
 .one-app__logo {
@@ -878,6 +890,13 @@ section {
   position: relative;
 }
 
+.roadmap__phase .roadmap__marker {
+  position: absolute;
+  top: -25px;
+  left: -50px;
+  z-index: 10;
+}
+
 .roadmap__phase:not(.roadmap__phase_one) .container {
   gap: 25px 16px;
   -ms-flex-wrap: wrap;
@@ -1007,6 +1026,10 @@ section {
 .roadmap__phase_one {
   border: none;
   color: #fff;
+}
+
+.roadmap__phase_one .roadmap__marker {
+  left: calc((100vw - 1200px)/2 + 300px);
 }
 
 .roadmap__phase_one::before {
@@ -1145,6 +1168,9 @@ section {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+  }
+  .roadmap__phase_one .roadmap__marker {
+    left: 25%;
   }
 }
 

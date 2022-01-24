@@ -4,16 +4,44 @@ gsap.registerPlugin(ScrollTrigger)
 gsap.to('.one-app__brands-item', {
     scrollTrigger: {
         trigger: '.one-app__brands-item',
-        start: 'top center',
-        end: 'bottom',
+        start: '10px center',
+        end: 'center',
         toggleActions: 'restart pause reverse reverse',
-        scrub: true
+        scrub: 0.1,
     },
     x:0,
     y:0,
     background: '#7171FF',
     rotation: 0, 
-    duration: 0.5
+    duration: 0.3,
+    scale: (1.1, 1.1),
+    borderRadius: 0,
+    border: 'none'
+})
+
+gsap.to('.one-app__brands-item img', {
+    scrollTrigger: {
+        trigger: '.one-app__brands-item',
+        start: 'top center',
+        end: 'bottom',
+        toggleActions: 'restart pause reverse reverse',
+        scrub: 0.1,
+    },
+    duration: 1,
+    opacity: 0
+})
+
+
+gsap.to('.one-app__reviews-item', {
+    scrollTrigger: {
+        trigger: '.one-app__brands-item',
+        start: '50px center',
+        end: 'bottom',
+        toggleActions: 'restart pause reverse reverse',
+        scrub: 0.1,
+    },
+    opacity:0,
+    duration: 0.3,
 })
 
 gsap.to('.one-app__reviews-item', {
@@ -22,22 +50,20 @@ gsap.to('.one-app__reviews-item', {
         start: '50px center',
         end: 'bottom',
         toggleActions: 'restart pause reverse reverse',
-        scrub: true
     },
-    opacity:0.3,
-    rotation: 0, 
-    duration: 0.5,
+    duration: 0,
     y:0,
     x:0,
+    delay:0.5
 })
 
-gsap.to('.one-app__logo, .one-app__logo img', {
+gsap.to('.one-app__logo img', {
     scrollTrigger: {
         trigger: '.one-app__brands-item',
         start: '10px center',
         end: 'bottom',
         toggleActions: 'restart pause reverse reverse',
-        scrub: true
+        scrub: 0.1,
     },
     background: '#7171FF',
     rotation: 0, 
@@ -51,14 +77,14 @@ gsap.to('.one-app__reviews-item', {
         trigger: '.one-app__brands-item',
         start: '50px center',
         end: 'bottom',
-        toggleActions: 'restart pause reverse reverse',
-        scrub: true
+        toggleActions: 'play pause reverse reverse',
+        scrub: 0.1,
     },
     
     opacity:1,
     rotation: 0, 
-    duration: 0.5,
-    delay: 0.8,
+    duration: 0.4,
+    delay: 1,
     
 })
 
@@ -68,7 +94,6 @@ gsap.to('.one-app__description', {
         start: '50px center',
         end: 'bottom',
         toggleActions: 'restart pause reverse reverse',
-        scrub: true
     },
     
     opacity:1,
@@ -93,4 +118,22 @@ for(let banner of banners){
         duration: 0.5
     })
 }
+
+let roadmapMarkers = document.querySelectorAll('.roadmap__marker')
+
+for (let marker of roadmapMarkers){
+    gsap.to(marker, {
+        scrollTrigger: {
+            trigger: marker,
+            start: '1px center',
+            end: 'bottom',
+            toggleActions: 'restart pause reverse reverse',
+            scrub: 1,
+        },
+        
+        x: +500,
+        duration: 1
+    })
+}
+
 
