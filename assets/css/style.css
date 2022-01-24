@@ -1030,6 +1030,7 @@ section {
 
 .roadmap__phase_one .roadmap__marker {
   left: calc((100vw - 1200px)/2 + 300px);
+  content: "";
 }
 
 .roadmap__phase_one::before {
