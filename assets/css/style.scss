@@ -165,7 +165,13 @@ section{
         align-items: center;
         cursor: pointer;
 
-        div, &::before, &::after{
+        div{
+            width: 25px;
+            height: 2px;
+            background: #fff;
+        }
+
+        &::before, &::after{
             width: 25px;
             height: 2.14px;
             background: #fff;
@@ -220,7 +226,7 @@ section{
     }
 
     &__description{
-        max-width: 475px;
+        max-width: 490px;
         margin-bottom: 32px;
     }
 
@@ -261,6 +267,7 @@ section{
     .first-screen{
         padding-top: 163px;
         height: auto;
+        
         .container{
             flex-direction: column;
         }
@@ -292,11 +299,12 @@ section{
 
 @media screen and (max-width:850px){
     .first-screen{
+        overflow: hidden;
         &__image{
            width: 100%;
            margin-top: 73px;
            height: 461px;
-           
+           transform: translateY(40px);
            img{
                width: 100%;
                height: 100%;
@@ -339,7 +347,10 @@ section{
     display: flex;
     justify-content: space-between;
     color: #fff;
+    position: relative;
+    overflow: hidden;
     
+   
 
     &__content{
         text-align: start;
@@ -348,6 +359,22 @@ section{
         position: relative;
        opacity: 0;
        transform: translateY(20px);
+        display: flex;
+        flex-direction: column;
+       .banner__image{
+           height: 270px;
+          
+           img{
+               width: 100%;
+               height: 100%;
+               object-fit: contain;
+               object-position: center;
+           }
+       }
+    }
+
+    &_portfolio, &__content{
+        max-width: 622px;
     }
 
     &__suptitle{
@@ -373,7 +400,8 @@ section{
     }
 
     &__btn{
-        margin-top: 62px;
+        position: relative;
+        margin-top: auto;
         background: none;
         border: none;
         font-weight: bold;
@@ -382,11 +410,31 @@ section{
         display: flex;
         align-items: center;
         cursor: pointer;
-
         span{
             margin-left: 25px;
         }
     }
+
+    .banner__image_bottom{
+        align-self: flex-end;
+        position: relative;
+        width: 100%;
+        max-width: 1px;
+        height: 240px;
+
+        .banner__image_small{
+            display: none;
+        }
+
+        img{
+            width: auto;
+            height: auto;
+            position: absolute;
+            bottom: -55px;
+            right: 0;
+        }
+    }
+
 
     
 
@@ -488,6 +536,30 @@ section{
         &__content{
             margin-bottom: 32px;
         }
+
+
+        .banner__image_bottom{
+            width: auto;
+            max-width: none;
+            align-self: center;
+            height: 100%;
+
+            .banner__image_small{
+                display: block;
+                bottom: 0;
+            }
+
+            .banner__image_big{
+                display: none;
+            }
+
+            img{
+               width: 100%;
+               height: 100%; 
+               position: relative;
+              
+            }
+        }
     }
 
     .two-banners{
@@ -513,7 +585,6 @@ section{
         }
     }
 }
-/*one app for everything*/
 
 .one-app{
     .title{
@@ -577,7 +648,7 @@ section{
                 background: #1E1E1E;
             }
 
-            &:nth-child(9){
+            &:nth-child(5){
                 background: linear-gradient(244.69deg, #B5519F 1.21%, #35B6C5 99.91%);
                 transform: rotate(5.66deg);
             }
@@ -597,6 +668,7 @@ section{
 
             &:nth-child(9){
                 transform: rotate(7.98deg);
+                border: 1px solid #E5E5E5;
             }
 
             &:nth-child(10){
@@ -606,14 +678,20 @@ section{
 
             &:nth-child(11){
                 transform: rotate(9.32deg);
+                border: 1px solid #E5E5E5;
+                background: white;
             }
 
             &:nth-child(12){
                 transform: rotate(7.98deg) translateY(-20px);
+                border: 1px solid #E5E5E5;
+                background: white;
             }
 
             &:nth-child(13){
                 transform: rotate(-10.85deg) translateY(30px);
+                background: white;
+                border: 1px solid #E5E5E5;
             }
 
         }
@@ -721,6 +799,8 @@ section{
 
         &-item{
             margin-bottom: 32px;
+            transform: none !important;
+            opacity: 1 !important;
         }
     }
 
@@ -1115,11 +1195,11 @@ section{
         border-radius: 0;
         
         &__image{
-            align-self: stretch;
             position: relative;
-
+            transform: translateY(5px);
             img{
                 height: 100%;
+                width: 100%;
             }
         }
         

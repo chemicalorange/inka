@@ -166,7 +166,12 @@ section {
             align-items: center;
     cursor: pointer;
   }
-  .header__menu div, .header__menu::before, .header__menu::after {
+  .header__menu div {
+    width: 25px;
+    height: 2px;
+    background: #fff;
+  }
+  .header__menu::before, .header__menu::after {
     width: 25px;
     height: 2.14px;
     background: #fff;
@@ -223,7 +228,7 @@ section {
 }
 
 .first-screen__description {
-  max-width: 475px;
+  max-width: 490px;
   margin-bottom: 32px;
 }
 
@@ -298,10 +303,15 @@ section {
 }
 
 @media screen and (max-width: 850px) {
+  .first-screen {
+    overflow: hidden;
+  }
   .first-screen__image {
     width: 100%;
     margin-top: 73px;
     height: 461px;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
   }
   .first-screen__image img {
     width: 100%;
@@ -359,6 +369,8 @@ section {
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
 .banner__content {
@@ -369,6 +381,30 @@ section {
   opacity: 0;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.banner__content .banner__image {
+  height: 270px;
+}
+
+.banner__content .banner__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.banner_portfolio, .banner__content {
+  max-width: 622px;
 }
 
 .banner__suptitle {
@@ -394,7 +430,8 @@ section {
 }
 
 .banner__btn {
-  margin-top: 62px;
+  position: relative;
+  margin-top: auto;
   background: none;
   border: none;
   font-weight: bold;
@@ -411,6 +448,27 @@ section {
 
 .banner__btn span {
   margin-left: 25px;
+}
+
+.banner .banner__image_bottom {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  position: relative;
+  width: 100%;
+  max-width: 1px;
+  height: 240px;
+}
+
+.banner .banner__image_bottom .banner__image_small {
+  display: none;
+}
+
+.banner .banner__image_bottom img {
+  width: auto;
+  height: auto;
+  position: absolute;
+  bottom: -55px;
+  right: 0;
 }
 
 .banner__slider {
@@ -517,6 +575,26 @@ section {
   .banner__content {
     margin-bottom: 32px;
   }
+  .banner .banner__image_bottom {
+    width: auto;
+    max-width: none;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    height: 100%;
+  }
+  .banner .banner__image_bottom .banner__image_small {
+    display: block;
+    bottom: 0;
+  }
+  .banner .banner__image_bottom .banner__image_big {
+    display: none;
+  }
+  .banner .banner__image_bottom img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
   .two-banners {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -543,7 +621,6 @@ section {
   }
 }
 
-/*one app for everything*/
 .one-app .title {
   margin-bottom: 66px;
 }
@@ -624,7 +701,7 @@ section {
   background: #1E1E1E;
 }
 
-.one-app__brands-item:nth-child(9) {
+.one-app__brands-item:nth-child(5) {
   background: linear-gradient(244.69deg, #B5519F 1.21%, #35B6C5 99.91%);
   -webkit-transform: rotate(5.66deg);
           transform: rotate(5.66deg);
@@ -648,6 +725,7 @@ section {
 .one-app__brands-item:nth-child(9) {
   -webkit-transform: rotate(7.98deg);
           transform: rotate(7.98deg);
+  border: 1px solid #E5E5E5;
 }
 
 .one-app__brands-item:nth-child(10) {
@@ -659,16 +737,22 @@ section {
 .one-app__brands-item:nth-child(11) {
   -webkit-transform: rotate(9.32deg);
           transform: rotate(9.32deg);
+  border: 1px solid #E5E5E5;
+  background: white;
 }
 
 .one-app__brands-item:nth-child(12) {
   -webkit-transform: rotate(7.98deg) translateY(-20px);
           transform: rotate(7.98deg) translateY(-20px);
+  border: 1px solid #E5E5E5;
+  background: white;
 }
 
 .one-app__brands-item:nth-child(13) {
   -webkit-transform: rotate(-10.85deg) translateY(30px);
           transform: rotate(-10.85deg) translateY(30px);
+  background: white;
+  border: 1px solid #E5E5E5;
 }
 
 .one-app__logo {
@@ -799,6 +883,9 @@ section {
   }
   .one-app__reviews-item {
     margin-bottom: 32px;
+    -webkit-transform: none !important;
+            transform: none !important;
+    opacity: 1 !important;
   }
   .one-app__description {
     margin: 0 auto;
@@ -1256,14 +1343,14 @@ section {
 }
 
 .use-all-benefits .banner__image {
-  -ms-flex-item-align: stretch;
-      -ms-grid-row-align: stretch;
-      align-self: stretch;
   position: relative;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
 }
 
 .use-all-benefits .banner__image img {
   height: 100%;
+  width: 100%;
 }
 
 .use-all-benefits .container {

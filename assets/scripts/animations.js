@@ -50,8 +50,10 @@ gsap.to('.one-app__reviews-item', {
         start: '50px center',
         end: 'bottom',
         toggleActions: 'restart pause reverse reverse',
+        scrub: 0.1,
     },
-    duration: 0,
+    duration: 0.3,
+    opacity:1,
     y:0,
     x:0,
     delay:0.5
@@ -72,21 +74,6 @@ gsap.to('.one-app__logo img', {
     opacity:1
 })
 
-gsap.to('.one-app__reviews-item', {
-    scrollTrigger: {
-        trigger: '.one-app__brands-item',
-        start: '50px center',
-        end: 'bottom',
-        toggleActions: 'play pause reverse reverse',
-        scrub: 0.1,
-    },
-    
-    opacity:1,
-    rotation: 0, 
-    duration: 0.4,
-    delay: 1,
-    
-})
 
 gsap.to('.one-app__description', {
     scrollTrigger: {
