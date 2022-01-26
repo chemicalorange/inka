@@ -1,3 +1,8 @@
+window.addEventListener('load', ()=>{
+    document.querySelector('.preloader').classList.add('hide')
+    document.querySelector('body').classList.remove('lock')
+})
+
 const header = document.querySelector('.header')
 
 window.addEventListener('scroll', ()=>{

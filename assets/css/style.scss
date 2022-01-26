@@ -5,6 +5,95 @@
 
 }
 
+$len: 242.776657104492px;
+$time: 1.6s;
+#outline {
+  stroke-dasharray: $len*0.03, $len;
+  stroke-dashoffset: 0;
+  animation: anim $time linear infinite;
+}
+@keyframes anim {
+  12.5% {
+    stroke-dasharray: $len*0.14, $len;
+    stroke-dashoffset: -$len*0.11;
+  }
+  43.75% {
+    stroke-dasharray: $len*0.35, $len;
+    stroke-dashoffset: -$len*0.35;
+  }
+  100% {
+    stroke-dasharray: $len*0.01, $len;
+    stroke-dashoffset: -$len*0.99;
+  }
+}
+
+.preloader.hide{
+    opacity: 0;
+    visibility: hidden;
+    
+}
+
+.preloader{
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: all ease 0.3s;
+    
+
+    &__infinity{
+        display: flex;
+        position: relative;
+        width: 171.78px;
+        height: 73.37px;
+    }
+
+    &__round{
+        width: 87px;
+        height: 86.18px;
+        border: 5px dashed #DADADA;
+        border-radius: 60px;
+    }
+    
+    &__image{
+        transform: translateY(-20px) translateX(-10px);
+        position: absolute;
+        top: 48%;  left:1%;
+        animation: roll 1.8s infinite ease-in-out;
+    }
+}
+
+@keyframes roll{
+    6.25%  {top: 21%; left:3%}
+    12.5%  {top: 7%; left:11%;}
+    18.75%  {top: 12%; left:25%;}
+    25% {top: 48%; left:47%;}
+    
+    31.25%  {top: 84%;  left:71%;}
+    37.5% {top: 91%; left: 82%}
+    43.75% {top: 73%; left: 92%;}
+    50% { top: 47%; left: 94%;}
+    
+    56.25% {top: 23%; left: 92%;}
+    62.5% {top: 6%; left: 82%;}
+    68.75% {top: 12%; left: 70%;}
+    75% { top: 48%; left:47%; }
+    
+    81.25% { top: 73%; left: 33%;}
+    87.5% { top: 89%; left: 19%;}
+    93.75% { top: 84%; left: 7%; } 
+    100% { top: 48%;  left:1%;}
+
+}
+
+
 body{
     font-family: Open Sans;
     font-size: 16px;
