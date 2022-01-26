@@ -8,7 +8,7 @@
 body{
     font-family: Open Sans;
     font-size: 16px;
-    color: #556174
+    color: #556174;
 }
 
 @media screen and (max-width:490px) {
@@ -115,6 +115,204 @@ section{
     z-index: 20;
     transition: background 0.3s ease;
 
+    .nav{
+
+        &__title{
+            font-weight: bold;
+            font-size: 21.25px;
+            margin-bottom: 32px;
+            width: auto;
+
+            .icon-arrow{
+                font-size: 14px;
+                margin-left: 7px;
+                color: #556174;
+            }
+        }
+
+        a:hover .nav__title, a:hover .item__title{
+            color: $violet;
+        }
+
+        &__list{
+            display: flex;
+            gap: 64px;
+            & > li{
+                position: relative;
+
+                &:hover::before{
+                    content: "\e909";
+                    color: #fff;
+                    font-family: icomoon;
+                    position: absolute; 
+                    left: 50%; bottom: -20px;
+                    transform: translateX(-10px) 
+                    
+                }
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    bottom: -20px;
+                    left: 0;
+                    height: 20px;
+                    background: transparent;
+                
+                }
+            }
+        }
+
+        &__sub-menu{
+            top: 38px;
+            right: -50%;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            
+
+            li a{
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                .item__text{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                    width: 295px;
+                }
+
+                .item__title{
+                    font-weight: 600;
+                    font-size: 14px;
+                    color: #556174;
+                }
+
+                p{
+                    font-size: 14px;
+                    color: rgba(101, 108, 108, 0.65);
+                }
+
+            }
+        }
+
+        &__sub-menu_company{
+            right: 0;
+            .nav__sub-menu-body{
+                width: 200px;
+            }
+
+            a:hover{
+                .item__title::after{
+                    content: "\e900";
+                    margin-left: 63px;
+                    color: $violet;
+                    font-family: icomoon;
+                    font-size: 12px;
+                }
+            }
+        }
+
+
+        &__sub-menu_investors{
+            overflow: hidden;
+            .nav__sub-menu-body{
+                display: flex;
+                justify-content: space-between;
+                padding: 8px;
+                align-items: stretch;
+            }
+
+            .nav__title{
+                margin-bottom: 16px;
+            }
+
+            .nav__title_mb{
+                display: none;
+            }
+
+            li a{
+                align-items: flex-start;
+            }
+
+            a:hover{
+                .item__title{
+                    color: #556174;
+                }
+
+                .item__title::after{
+                    content: "\e900";
+                    margin-left: 12px;
+                    color: $violet;
+                    font-family: icomoon;
+                    font-size: 12px;
+                }
+
+                .item__image{
+                    color: $violet;
+                }
+            }
+
+            .item__image{
+                color: #9EA5B0;
+            }
+
+            .nav__email{
+                background: #F7F7F9;
+                border-radius: 0px 10px 9px 0px;
+                position: relative;
+                
+                p, a{
+                    font-size: 14px;
+                    color: rgba(101, 108, 108, 0.65);
+                    margin-bottom: 18px;
+                }
+
+                a{
+                    text-decoration: underline;
+                }
+
+                .icon-envelope{
+                    margin-right: 8px;
+                }
+
+                .nav__bg-investors{
+                    position: absolute;
+                    bottom: -20px;
+                    right: -20px;
+                }
+            }
+
+            .nav__sub-menu-list, .nav__email{
+                padding: 19px;
+            }
+        }
+
+        &__sub-menu-body{
+            padding: 32px 30px;
+            background: #FFFFFF;
+            box-shadow: 0px 8px 8px -4px rgba(24, 39, 75, 0.08);
+            border-radius: 10px;
+            width: 100vw;
+            max-width: 734px;
+        }
+
+        &__list-item:hover .nav__sub-menu{
+            visibility: visible;
+            opacity: 1;
+        }
+
+        &__sub-menu-list{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            flex-wrap: wrap;
+            max-height: 261px;
+            
+        }
+    }
+
     &.white{
         background: #fff;
         
@@ -144,7 +342,6 @@ section{
             font-weight: 600;
             font-size: 16px;
             color: #fff;
-            margin-right: 64px;
 
            
         }
@@ -175,6 +372,7 @@ section{
             width: 25px;
             height: 2.14px;
             background: #fff;
+            transition: all ease 0.3s;
         }
 
         &::before, &::after{
@@ -192,8 +390,106 @@ section{
 
     }
 
+    .header__menu.active{
+        div{
+            display: none;
+        }
+
+        &::before{
+            top: 7px;
+            transform: rotate(45deg);
+        }
+
+        &::after{
+            top: 7px;
+            bottom: auto;
+            transform: rotate(-45deg);
+        }
+
+    }
+
     .header__nav{
         display: none;
+    }
+
+
+    /*-------------------------------------*/
+
+    .nav_active{
+        position: absolute;
+        display: flex;
+        top: 76px;
+        left: 0;
+        background: #FBFBFE;
+        padding: 16px 9px;
+        width: 100%;
+        border-top: 1px solid rgba(234, 234, 234, 0.99);
+        min-height: calc(100vh - 76px);
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        .nav__list{
+            width: 100%;
+            justify-content: space-between;
+            align-items: start;
+            gap: 0;
+            
+            
+        }
+
+        .nav__has-child{
+            padding: 8px 11px;
+            position: static !important;
+
+            &.active{
+                background: #7171FF;
+                border-radius: 2px;
+                & > a{
+                    color: #fff;
+                }
+                
+                .nav__sub-menu{
+                    width: 100%;
+                    max-width: none;
+                    left: 0;
+                    top: 60px;
+                    padding: 0;
+                    visibility: visible;
+                    opacity: 1;
+                    
+                    
+                    .nav__sub-menu-body{
+                        padding: 32px 20px;
+                        box-shadow: none;
+                        flex-direction: column;
+
+                        .nav__sub-menu-list{
+                            max-height: none;
+                            padding: 0;
+                        }
+                    }
+
+                    .nav__email{
+                        margin-top: 24px;
+                        min-height: 234px;
+
+                        .nav__bg-investors{
+                            bottom: 0;
+                            right: 0;
+                        }
+                    }
+                }
+                .nav__title_mb{
+                    display: block;
+                }
+            }
+
+            
+        }
+    }
+
+    body.lock{
+        overflow: hidden;
     }
 }
 
@@ -851,6 +1147,7 @@ section{
             background: #E6E6E7;
             padding: 8px;
             border-radius: 3px;
+            color: #fff;
         }
 
         &_one{
