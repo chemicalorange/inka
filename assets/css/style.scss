@@ -37,7 +37,7 @@ $time: 1.6s;
     width: 100%;
     height: 100vh;
     background: #fff;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
@@ -53,6 +53,20 @@ $time: 1.6s;
         position: relative;
         width: 171.78px;
         height: 73.37px;
+    }
+
+    .line-infinity{
+        position: relative;
+    }
+
+    .line-infinity::before{
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        top: 0;
+        left: 0;
+        background: #F7931A;
     }
 
     &__round{
@@ -876,6 +890,9 @@ section{
 }
 
 .banner_white{
+    background: #F7F7F9;
+    margin: 24px 0;
+
     .banner__suptitle{
         color: $violet;
     }
@@ -972,6 +989,7 @@ section{
 }
 
 .one-app{
+    background: #FBFBFE;
     .title{
         margin-bottom: 66px;
     }
@@ -1260,6 +1278,8 @@ section{
         flex-wrap: wrap;
     }
 
+    
+
     &__phase{
         border-top: 7px dashed #E6E6E7;
         position: relative;
@@ -1270,11 +1290,15 @@ section{
             left: -50px;
             z-index: 10;
         }
+
+        
         
         &:not(.roadmap__phase_one){
             .container{
                 gap: 25px 16px;
+                column-width: 200px;
                 flex-wrap: wrap;
+                align-items: stretch;
             }
 
             .item{
@@ -1286,8 +1310,12 @@ section{
                 align-items: flex-start;
                 color: #778190;
                 position: relative;
-                max-width: 590px;
                 width: 100%;
+                max-width: 576px;
+
+                
+
+                
                 
                 &__list-item{
                     list-style: inside;
@@ -1353,6 +1381,7 @@ section{
                         font-weight: 600;
                         display: flex;
                         align-items: center;
+                        font-size: 17px;
 
                         img{
                             margin-right: 10px;
@@ -1361,6 +1390,8 @@ section{
                 }
             }
         }
+
+        
 
         .title2{
             color: white;
@@ -1394,7 +1425,7 @@ section{
             }
             .container{
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: 1fr, 1fr, minmax(1fr, 325px);
                 grid-template-rows: repeat(3, 0.5fr);
                 grid-column-gap: 17px;
                 grid-row-gap: 17px;
@@ -1421,6 +1452,7 @@ section{
                         display: flex;
                         align-items: center;
                         margin-bottom: 18px;
+
 
                         img{
                             margin-right: 12px;
@@ -1476,6 +1508,18 @@ section{
         }
     }
 
+    .roadmap__phase_two{
+        .container{
+            align-items: flex-start;
+        }
+        
+
+        .item_fixed-height2{
+            min-height: 176px;
+            position: relative;
+            transform: translateY(-15px);
+        }
+    }
 
 }
 
@@ -1499,6 +1543,12 @@ section{
 
 @media screen and (max-width:1174px){
     .roadmap{
+        &__phase_two{   
+        .item_fixed-height2{
+            transform: translate(0) !important;   
+        }
+        }
+
         &__logos{
             margin-top: 16px;
 
@@ -1785,6 +1835,8 @@ section{
     }
     &__title{
        margin-bottom: 29.5px;
+       font-family: Helvetica Neue;
+       font-size: 17px;
     }
 
     &__social li a:last-child{
@@ -1802,6 +1854,7 @@ section{
 
         a{
             color: #778190;
+            font-family: Helvetica Neue;
         }
     }
 
@@ -1840,8 +1893,11 @@ section{
             margin-bottom: 40px;
         }
 
+        
+
         &__title{
             margin-top: 20px;
+            font-family: Helvetica Neue;
         }
 
         &__social{ 
@@ -1856,6 +1912,8 @@ section{
             display: flex;
             width: 100%;
             justify-content: space-around;
+
+                
             }
             .footer__list-item a{
                 margin: 0;

@@ -1,7 +1,11 @@
 window.addEventListener('load', ()=>{
-    document.querySelector('.preloader').classList.add('hide')
-    document.querySelector('body').classList.remove('lock')
+    setTimeout(()=>{
+        document.querySelector('.preloader').classList.add('hide')
+        document.querySelector('body').classList.remove('lock')
+    }, 1000)
 })
+
+
 
 const header = document.querySelector('.header')
 
