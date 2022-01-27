@@ -1,3 +1,4 @@
+
 window.addEventListener('load', ()=>{
     setTimeout(()=>{
         document.querySelector('.preloader').classList.add('hide')
@@ -8,6 +9,8 @@ window.addEventListener('load', ()=>{
 
 
 const header = document.querySelector('.header')
+
+if(window.pageYOffset > document.querySelector('.first-screen').clientHeight){header.classList.add('white')}
 
 window.addEventListener('scroll', ()=>{
     if(window.pageYOffset > document.querySelector('.first-screen').clientHeight){

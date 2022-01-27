@@ -59,16 +59,6 @@ $time: 1.6s;
         position: relative;
     }
 
-    .line-infinity::before{
-        content: "";
-        position: absolute;
-        width: 5px;
-        height: 5px;
-        top: 0;
-        left: 0;
-        background: #F7931A;
-    }
-
     &__round{
         width: 87px;
         height: 86.18px;
@@ -272,6 +262,7 @@ section{
             position: absolute;
             visibility: hidden;
             opacity: 0;
+            transition: all 0.3s ease;
             
 
             li a{
@@ -399,6 +390,10 @@ section{
             border-radius: 10px;
             width: 100vw;
             max-width: 734px;
+        }
+
+        .nav__has-child:hover{
+            cursor: pointer;
         }
 
         &__list-item:hover .nav__sub-menu{
@@ -544,6 +539,11 @@ section{
             padding: 8px 11px;
             position: static !important;
 
+            &:hover .nav__sub-menu{
+                visibility: hidden;
+                opacity: 0;
+            }
+
             &.active{
                 background: #7171FF;
                 border-radius: 2px;
@@ -552,42 +552,43 @@ section{
                 }
                 
                 .nav__sub-menu{
-                    width: 100%;
-                    max-width: none;
-                    left: 0;
-                    top: 60px;
-                    padding: 0;
                     visibility: visible;
                     opacity: 1;
-                    
-                    
-                    .nav__sub-menu-body{
-                        padding: 32px 20px;
-                        box-shadow: none;
-                        flex-direction: column;
-
-                        .nav__sub-menu-list{
-                            max-height: none;
-                            padding: 0;
-                        }
-                    }
-
-                    .nav__email{
-                        margin-top: 24px;
-                        min-height: 234px;
-
-                        .nav__bg-investors{
-                            bottom: 0;
-                            right: 0;
-                        }
-                    }
                 }
-                .nav__title_mb{
-                    display: block;
-                }
+                
             }
 
+            .nav__sub-menu{
+                width: 100%;
+                max-width: none;
+                left: 0;
+                top: 60px;
+                padding: 0;
             
+                .nav__sub-menu-body{
+                    padding: 32px 20px;
+                    box-shadow: none;
+                    flex-direction: column;
+
+                    .nav__sub-menu-list{
+                        max-height: none;
+                        padding: 0;
+                    }
+                }
+
+                .nav__email{
+                    margin-top: 24px;
+                    min-height: 234px;
+
+                    .nav__bg-investors{
+                        bottom: 0;
+                        right: 0;
+                    }
+                }
+            }
+            .nav__title_mb{
+                display: block;
+            }
         }
     }
 
@@ -1010,6 +1011,7 @@ section{
         flex-wrap: wrap;
         position: relative;
         margin-bottom: 41px;
+        gap: 15px;
         
         
         &-item{
@@ -1020,6 +1022,18 @@ section{
             align-items: center;
             border-radius: 5px;
             position: relative;
+            transition: 0.3s all ease;
+
+            img{
+                position: absolute;
+                transition: all 0.3s ease;
+                object-position: center;
+                object-fit: contain;
+            }
+
+            &.showBefore::before{
+                opacity: 1;
+            }
 
             &::before{
                 content: "";
@@ -1030,6 +1044,7 @@ section{
                 height: 100%;
                 background: $violet;
                 opacity: 0;
+                transition: all 0.3s ease;
             }
 
             &:nth-child(2){
@@ -1076,11 +1091,11 @@ section{
 
             &:nth-child(10){
                 background: #F5BB50;
-                transform: rotate(-11.28deg) translateY(-20px);
+                transform: rotate(-11.28deg) translateY(1rem) translateX(-2rem);
             }
 
             &:nth-child(11){
-                transform: rotate(9.32deg);
+                transform: rotate(9.32deg) translateY(5rem);
                 border: 1px solid #E5E5E5;
                 background: white;
             }
@@ -1114,6 +1129,7 @@ section{
         img{
             transform: translateY(-20px);
             opacity: 0;
+            transition: all ease 0.5s;
         }
     }
 
@@ -1131,6 +1147,9 @@ section{
             padding: 32px 16px;
             background: #fff;
             z-index: 10;
+            transition: all 0.3s ease;
+            
+            
 
             &__info{
                 display: flex;
@@ -1177,6 +1196,8 @@ section{
 
         }
 
+        
+
     }
 
     &__description{
@@ -1195,6 +1216,15 @@ section{
     }
 }
 
+
+@media screen and (max-width:1200px){
+    .one-app{
+        &__brands{
+            gap: 1vw;
+        }
+    }
+}
+
 @media screen and (max-width:850px){
     .one-app__reviews{
         flex-direction: column;
@@ -1207,12 +1237,29 @@ section{
         }
     }
 
+    .one-app__brands-item img{
+        width: calc((100% / 4.2)*0.9);
+        height: auto;
+    }
+
     .one-app__description{
         margin: 0 auto;
     }
 
     .title, .title2, .subtitle, .description{
         text-align: center;
+    }
+}
+
+@media screen and (max-width:333px){
+    .one-app{
+        &__logo{
+            img{
+                width: 49.42px;
+                height: 49.36px;
+                transform: none;
+            }
+        }
     }
 }
 
