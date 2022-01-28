@@ -3,24 +3,12 @@ window.addEventListener('load', ()=>{
     setTimeout(()=>{
         document.querySelector('.preloader').classList.add('hide')
         document.querySelector('body').classList.remove('lock')
-    }, 1000)
+    }, 5)
 })
 
 
 
 const header = document.querySelector('.header')
-
-if(window.pageYOffset > document.querySelector('.first-screen').clientHeight){header.classList.add('white')}
-
-window.addEventListener('scroll', ()=>{
-    if(window.pageYOffset > document.querySelector('.first-screen').clientHeight){
-        header.classList.add('white')
-    }else{
-        header.classList.remove('white')
-    }
-    
-})
-
 const burgerMenu = document.querySelector('.header__menu')
 const nav = document.querySelector('.header__nav')
 const navItems = document.querySelectorAll('.nav__has-child')

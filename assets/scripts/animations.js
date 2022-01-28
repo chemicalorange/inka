@@ -7,47 +7,72 @@ let counterAnimation = 0;
 const oneAppAnimation = () =>{
     for(let item of brandItems){
         setTimeout(()=>{
-            item.style.transform = "translate(0, 0)"
+            item.classList.add('animation-st-1')
         }, 5)
         setTimeout(()=>{
-            item.classList.add('showBefore')
-            item.style.border = "none"
-            item.querySelector('img').style.opacity = '0'
-            item.style.background = "none"
-            item.style.boxShadow = "none"
-            item.style.transform = "scale(1.3, 1.3)"
-            document.querySelector('.one-app__logo img').style.opacity = '1'
+            item.classList.add('animation-st-2')
+            document.querySelector('.one-app__logo img').classList.add('animation-st-2')
         }, 500)    
     }
     
     setTimeout(()=>{
-        reviewsItems.forEach(item => item.style.opacity = 0)
+        reviewsItems.forEach(item => item.classList.add('animation-st-3'))
     }, 1000)
     
     setTimeout(()=>{
-        reviewsItems.forEach(item => item.style.transform = 'translate(0, 0)')
+        reviewsItems.forEach(item => item.classList.add('animation-st-4'))
     }, 1200)
     
     setTimeout(()=>{
-        reviewsItems.forEach(item => item.style.opacity = 1)
+        reviewsItems.forEach(item => item.classList.add('animation-st-5'))
     }, 1500)
 }
 
-window.addEventListener('scroll', () => {
-    if(counterAnimation === 0){
-        if(window.pageYOffset > document.querySelector('.first-screen').clientHeight - 160){
-            oneAppAnimation()
-            counterAnimation = 1
-        }
-    }
-})
+const clearOneAppAnimation = () =>{
 
-if(window.pageYOffset > document.querySelector('.first-screen').clientHeight - 130){
-    oneAppAnimation()
-    counterAnimation = 1
+    setTimeout(()=>{
+        reviewsItems.forEach(item => item.classList.remove('animation-st-5'))
+    }, 5)
+    
+    setTimeout(()=>{
+        reviewsItems.forEach(item => item.classList.remove('animation-st-4'))
+    }, 500)
+
+    setTimeout(()=>{
+        reviewsItems.forEach(item => item.classList.remove('animation-st-3'))
+    }, 1000)
+
+    setTimeout(()=>{
+        brandItems.forEach(item => item.classList.remove('animation-st-2'))
+        document.querySelector('.one-app__logo img').classList.remove('animation-st-2')
+    }, 1200)
+
+    setTimeout(()=>{
+        brandItems.forEach(item => item.classList.remove('animation-st-1'))
+    }, 1500)
+
 }
 
+window.onload = () =>{
+    window.addEventListener('scroll', () => {
 
+        if(window.pageYOffset > document.querySelector('.first-screen').clientHeight - 160){
+            if(counterAnimation === 0){
+                oneAppAnimation()
+                counterAnimation = 1
+            }
+        }else if(counterAnimation == 1){
+            clearOneAppAnimation()
+            counterAnimation = 0
+        }
+    })
+    
+    if(window.pageYOffset > document.querySelector('.first-screen').clientHeight - 130){
+        oneAppAnimation()
+        counterAnimation = 1
+    }
+        
+}
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -64,26 +89,10 @@ gsap.to('.one-app__description', {
 })
 
 
-let banners = document.querySelectorAll('.banner');
+let roadmapPhases = document.querySelectorAll('.roadmap__phase')
 
-for(let banner of banners){
-    let bannerContent = banner.querySelector('.banner__content')
-
-    gsap.to(bannerContent, {
-        scrollTrigger:{
-            trigger: banner,
-            start: '10px center',
-            end: 'bottom',
-        },
-        opacity:1,
-        y:0,
-        duration: 0.5
-    })
-}
-
-let roadmapMarkers = document.querySelectorAll('.roadmap__marker')
-
-for (let marker of roadmapMarkers){
+for (let phase of roadmapPhases){
+    let marker = phase.querySelector('.roadmap__marker')
     gsap.to(marker, {
         scrollTrigger: {
             trigger: marker,
@@ -93,7 +102,7 @@ for (let marker of roadmapMarkers){
             scrub: 1,
         },
         
-        x: +500,
+        x: phase.clientWidth,
         duration: 1
     })
 }
