@@ -47,6 +47,13 @@ $time: 1.6s;
     opacity: 1;
     transition: all ease 0.3s;
     
+    &__pr{
+        position: relative;
+        
+        img{
+            width: 200px;
+        }
+    }
 
     &__infinity{
         display: flex;
@@ -73,6 +80,13 @@ $time: 1.6s;
         animation: roll 1.8s infinite ease-in-out;
     }
 }
+
+.example{
+    animation: 1s ease example infinite;
+}
+
+
+
 
 @keyframes roll{
     6.25%  {top: 21%; left:3%}
