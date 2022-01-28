@@ -1,9 +1,7 @@
 
 window.addEventListener('load', ()=>{
-    setTimeout(()=>{
         document.querySelector('.preloader').classList.add('hide')
         document.querySelector('body').classList.remove('lock')
-    }, 500)
 })
 
 
