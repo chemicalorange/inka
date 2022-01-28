@@ -2,77 +2,6 @@ const oneApp = document.querySelector('.oneApp')
 const brandItems = document.querySelectorAll('.one-app__brands-item')
 const reviewsItems = document.querySelectorAll('.one-app__reviews-item')
 
-let counterAnimation = 0;
-
-const oneAppAnimation = () =>{
-    for(let item of brandItems){
-        setTimeout(()=>{
-            item.classList.add('animation-st-1')
-        }, 5)
-        setTimeout(()=>{
-            item.classList.add('animation-st-2')
-            document.querySelector('.one-app__logo img').classList.add('animation-st-2')
-        }, 500)    
-    }
-    
-    setTimeout(()=>{
-        reviewsItems.forEach(item => item.classList.add('animation-st-3'))
-    }, 1000)
-    
-    setTimeout(()=>{
-        reviewsItems.forEach(item => item.classList.add('animation-st-4'))
-    }, 1200)
-    
-    setTimeout(()=>{
-        reviewsItems.forEach(item => item.classList.add('animation-st-5'))
-    }, 1500)
-}
-
-const clearOneAppAnimation = () =>{
-
-    setTimeout(()=>{
-        reviewsItems.forEach(item => item.classList.remove('animation-st-5'))
-    }, 5)
-    
-    setTimeout(()=>{
-        reviewsItems.forEach(item => item.classList.remove('animation-st-4'))
-    }, 500)
-
-    setTimeout(()=>{
-        reviewsItems.forEach(item => item.classList.remove('animation-st-3'))
-    }, 1000)
-
-    setTimeout(()=>{
-        brandItems.forEach(item => item.classList.remove('animation-st-2'))
-        document.querySelector('.one-app__logo img').classList.remove('animation-st-2')
-    }, 1200)
-
-    setTimeout(()=>{
-        brandItems.forEach(item => item.classList.remove('animation-st-1'))
-    }, 1500)
-
-}
-
-window.onload = () =>{
-    window.addEventListener('scroll', () => {
-
-        if(window.pageYOffset > document.querySelector('.first-screen').clientHeight - 160){
-            if(counterAnimation === 0){
-                oneAppAnimation()
-                counterAnimation = 1
-            }
-        }else if(counterAnimation == 1){
-            clearOneAppAnimation()
-            counterAnimation = 0
-        }
-    })
-    
-    if(window.pageYOffset > document.querySelector('.first-screen').clientHeight - 130){
-        oneAppAnimation()
-        counterAnimation = 1
-    }
-        
-}
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -86,7 +15,28 @@ gsap.to('.one-app__description', {
     opacity:1,
     duration: 0.5,
     
+    
+    
 })
+
+var tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".one-app",
+      scrub: true,
+      pin: true,
+      start: "-30px top",
+      end: "+=100%"
+    }
+  });
+
+
+tl.to(brandItems, {y:0, x:0, rotate: 0}, 1)
+  .to(brandItems, {border: 'none', background: '#7171FF', boxShadow: 'none', scale: 1.3}, 2)
+  .to('.one-app__brands-item img', {opacity: 0}, 2)
+  .to('.one-app__logo img', {opacity: 1}, 2)
+  .to(reviewsItems, {opacity: 0}, 3)
+  .to(reviewsItems, {x:0, y:0}, 4)
+  .to(reviewsItems, {opacity: 1}, 5)
 
 
 let roadmapPhases = document.querySelectorAll('.roadmap__phase')

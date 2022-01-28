@@ -17,6 +17,7 @@ burgerMenu.addEventListener('click', ()=>{
     burgerMenu.classList.toggle('active')
     header.classList.add('white')
     nav.classList.toggle('nav_active')
+    navItems.forEach( item2 => item2.classList.remove('active'))
     navItems[0].classList.add('active')
     document.querySelector('body').classList.toggle('lock')
 })
