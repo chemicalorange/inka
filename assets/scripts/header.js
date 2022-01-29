@@ -5,7 +5,6 @@ window.addEventListener('load', ()=>{
 })
 
 
-
 const header = document.querySelector('.header')
 const burgerMenu = document.querySelector('.header__menu')
 const nav = document.querySelector('.header__nav')

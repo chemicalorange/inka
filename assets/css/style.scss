@@ -86,7 +86,10 @@ $time: 1.6s;
 }
 
 
-
+img{
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
+}
 
 @keyframes roll{
     6.25%  {top: 21%; left:3%}
@@ -370,6 +373,7 @@ section{
                 background: #F7F7F9;
                 border-radius: 0px 10px 9px 0px;
                 position: relative;
+                width: fit-content;
                 
                 p, a{
                     font-size: 14px;
@@ -403,7 +407,7 @@ section{
             box-shadow: 0px 8px 8px -4px rgba(24, 39, 75, 0.08);
             border-radius: 10px;
             width: 100vw;
-            max-width: 734px;
+            max-width: 754px;
         }
 
         .nav__has-child:hover{
@@ -593,7 +597,7 @@ section{
                 .nav__email{
                     margin-top: 24px;
                     min-height: 234px;
-
+                    width: 100%;
                     .nav__bg-investors{
                         bottom: 0;
                         right: 0;
@@ -901,7 +905,9 @@ section{
     &__buttons{
         margin-top: 20px;
         display: flex;
-        gap: 25px;
+        width: 100%;
+        max-width: 350px;
+        justify-content: space-between;
     }
 }
 
@@ -1575,6 +1581,10 @@ section{
     .roadmap__phase_two{
         .container{
             align-items: flex-start;
+
+            .item:nth-child(1), .item:nth-child(2){
+                min-height: 369px
+            } 
         }
         
 
@@ -1687,6 +1697,16 @@ section{
         }
         
     }
+    
+    
+}
+
+@media screen and (max-width:374px){
+    .roadmap{
+        .item__list_al{
+            max-height: none !important;
+        }
+    }
 }
 
 .use-all-benefits{
@@ -1709,6 +1729,15 @@ section{
         justify-content: space-between;
         align-items: center;
         position: relative;
+    }
+}
+
+@media screen and (max-width:356px) {
+    .use-all-benefits{
+        .banner__buttons{
+            flex-direction: column;
+            gap: 5px;
+        }
     }
 }
 
@@ -1743,13 +1772,6 @@ section{
     
 }
 
-@media screen and (max-width:374px) {
-    .use-all-benefits{
-        .banner__buttons{
-            flex-direction: column;
-        }
-    }
-}
 
 .cta{
     padding: 0;
