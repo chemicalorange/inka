@@ -4,7 +4,7 @@
     box-sizing: border-box;
 
 }
-
+/*
 $len: 242.776657104492px;
 $time: 1.6s;
 #outline {
@@ -25,12 +25,11 @@ $time: 1.6s;
     stroke-dasharray: $len*0.01, $len;
     stroke-dashoffset: -$len*0.99;
   }
-}
+}*/
 
 .preloader.hide{
     opacity: 0;
     visibility: hidden;
-    
 }
 
 .preloader{
@@ -1119,7 +1118,7 @@ section{
             }
 
             &:nth-child(11){
-                transform: rotate(9.32deg) translateY(5rem);
+                transform: rotate(9.32deg) translateY(20px);
                 border: 1px solid #E5E5E5;
                 background: white;
             }
