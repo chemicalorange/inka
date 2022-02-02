@@ -1842,6 +1842,44 @@ section{
         width: 100%;
         display: flex;
         justify-content: space-between;
+
+        &_error .cta__input{
+            border-bottom: 1px solid #E85858;
+            color: #E85858;
+        }
+    }
+
+    &__honeypot{
+        visibility: hidden;
+        position: absolute;
+    }
+
+    &__error{
+        color: #E85858;
+        font-size: 17px;
+        padding-left: 29px;
+        margin-top: 23px;
+        position: relative;
+        visibility: hidden;
+
+        &::before, &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 14px;
+            height: 2px;
+            background: #E85858;
+            transform: rotate(45deg);
+        }
+
+        &::after{
+            transform: rotate(-45deg);
+        }
+
+        div{
+            margin-top: 16px;
+        }
     }
 
     &__input{

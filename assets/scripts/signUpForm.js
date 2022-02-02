@@ -1,11 +1,9 @@
-$(function() {
+
     $(".cta__form").submit(function (event) {
       event.preventDefault();
    
       
       let appLink = "https://script.google.com/macros/s/AKfycbzWhzK8jURmcnceYLvYkKM66mQwU3hWouK0uzCFONIBwjKZu7Mv7XLFZ1D-2wdtxlg9/exec";
-      let successRespond = 'Сообщение успешно отправлено. Посмотрите результат <a target="_blank" href="https://docs.google.com/spreadsheets/d/1h0egdmC9SYfhlscE_-0vPwCmuKAYTsjwhUBWuOw0v-w/edit?usp=sharing">тут</a>';
-      let errorRespond = 'Не удалось отправить сообщение. Cвяжитесь с администратором сайта по адресу <a href="mailto:smart-landing@ya.ru">smart-landing@ya.ru</a>';
       let form = $('#' + $(this).attr('id'))[0];
       let preloader = $(this).find('.preloader');
       let submitButton = $(this).find('.cta__btn');
@@ -24,7 +22,26 @@ $(function() {
 
         document.querySelector('.preloader').classList.remove('hide')
         document.querySelector('body').classList.add('lock')    
-        submitButton.prop('disabled', true);
+        
+        if(fd.get('honeypot').length) {
+          return false;
+        } else {
+          fd.delete('honeypot');
+        }
+
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        var address = form.querySelector('.cta__input').value;
+        if(reg.test(address) == false) {
+            form.classList.add('cta__form_error')
+            document.querySelector('.preloader').classList.add('hide')
+            document.querySelector('body').classList.remove('lock')
+            document.querySelector('.cta__error').style.visibility = "visible"   
+            return false
+        }else{
+          document.querySelector('.cta__error').style.visibility = "hidden" 
+          form.classList.remove('cta__form_error')  
+          return true
+        }
 
       },
    
@@ -42,35 +59,12 @@ $(function() {
         form.reset();
    
       } else {
-        formTitle.css({
-          'display': 'none'
-        });
-        formRespond.html(errorRespond).css('color', '#c64b4b');
-        preloader.css('opacity', '0');
-        setTimeout( () => {
-          formTitle.css({
-            'display': 'block'
-          });
-   
-          submitButton.prop('disabled', false);
-        }, 5000);
+        
    
         console.log('Гугл не ответил статусом 200');
       }
     }).fail(function(res, textStatus, jqXHR) {
-      preloader.css('opacity', '0');
-      formRespond.html('Не удалось отправить сообщение. Cвяжитесь с администратором сайта другим способом').css('color', '#c64b4b');
-      setTimeout( () => {
-        formRespond.css({
-          'display': 'none'
-        });
-        formTitle.css({
-          'display': 'block'
-        });
-        submitButton.prop('disabled', false); 
-      }, 5000);
-   
+      
       console.log('Не удалось выполнить запрос по указанному в скрипте пути');
     }); 
   });
-  }(jQuery));

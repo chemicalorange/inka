@@ -2127,6 +2127,46 @@ section {
           justify-content: space-between;
 }
 
+.cta__form_error .cta__input {
+  border-bottom: 1px solid #E85858;
+  color: #E85858;
+}
+
+.cta__honeypot {
+  visibility: hidden;
+  position: absolute;
+}
+
+.cta__error {
+  color: #E85858;
+  font-size: 17px;
+  padding-left: 29px;
+  margin-top: 23px;
+  position: relative;
+  visibility: hidden;
+}
+
+.cta__error::before, .cta__error::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 14px;
+  height: 2px;
+  background: #E85858;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.cta__error::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.cta__error div {
+  margin-top: 16px;
+}
+
 .cta__input {
   width: 100%;
   max-width: 504px;
