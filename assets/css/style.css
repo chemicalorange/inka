@@ -1965,6 +1965,9 @@ section {
     width: 30px;
     height: 30px;
   }
+  .roadmap__phase_one .roadmap__marker {
+    left: 0;
+  }
 }
 
 @media screen and (max-width: 374px) {
