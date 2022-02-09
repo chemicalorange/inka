@@ -4,28 +4,10 @@
     box-sizing: border-box;
 
 }
-/*
-$len: 242.776657104492px;
-$time: 1.6s;
-#outline {
-  stroke-dasharray: $len*0.03, $len;
-  stroke-dashoffset: 0;
-  animation: anim $time linear infinite;
+
+html{
+    scroll-behavior: smooth;
 }
-@keyframes anim {
-  12.5% {
-    stroke-dasharray: $len*0.14, $len;
-    stroke-dashoffset: -$len*0.11;
-  }
-  43.75% {
-    stroke-dasharray: $len*0.35, $len;
-    stroke-dashoffset: -$len*0.35;
-  }
-  100% {
-    stroke-dasharray: $len*0.01, $len;
-    stroke-dashoffset: -$len*0.99;
-  }
-}*/
 
 .preloader.hide{
     opacity: 0;
@@ -45,70 +27,12 @@ $time: 1.6s;
     align-items: center;
     opacity: 1;
     transition: all ease 0.3s;
-    
-    &__pr{
-        position: relative;
-
-       
-    }
-
-    &__infinity{
-        display: flex;
-        position: relative;
-        width: 171.78px;
-        height: 73.37px;
-    }
-
-    .line-infinity{
-        position: relative;
-    }
-
-    &__round{
-        width: 87px;
-        height: 86.18px;
-        border: 5px dashed #DADADA;
-        border-radius: 60px;
-    }
-    
-    &__image{
-        transform: translateY(-20px) translateX(-10px);
-        position: absolute;
-        top: 48%;  left:1%;
-        animation: roll 1.8s infinite ease-in-out;
-    }
-}
-
-.example{
-    animation: 1s ease example infinite;
 }
 
 
 img{
     image-rendering: -webkit-optimize-contrast;
     image-rendering: optimizeSpeed;
-}
-
-@keyframes roll{
-    6.25%  {top: 21%; left:3%}
-    12.5%  {top: 7%; left:11%;}
-    18.75%  {top: 12%; left:25%;}
-    25% {top: 48%; left:47%;}
-    
-    31.25%  {top: 84%;  left:71%;}
-    37.5% {top: 91%; left: 82%}
-    43.75% {top: 73%; left: 92%;}
-    50% { top: 47%; left: 94%;}
-    
-    56.25% {top: 23%; left: 92%;}
-    62.5% {top: 6%; left: 82%;}
-    68.75% {top: 12%; left: 70%;}
-    75% { top: 48%; left:47%; }
-    
-    81.25% { top: 73%; left: 33%;}
-    87.5% { top: 89%; left: 19%;}
-    93.75% { top: 84%; left: 7%; } 
-    100% { top: 48%;  left:1%;}
-
 }
 
 
@@ -242,7 +166,8 @@ section{
         }
 
         &__list{
-            display: flex;
+            display: grid;
+            grid-auto-flow: column;
             gap: 64px;
             & > li{
                 position: relative;
@@ -280,13 +205,14 @@ section{
             
 
             li a{
-                display: flex;
-                align-items: center;
+                display: grid;
+                grid-auto-flow: column;
                 gap: 16px;
 
                 .item__text{
-                    display: flex;
-                    flex-direction: column;
+                    display: grid;
+                    grid-auto-flow: row;
+                    justify-items: start;
                     gap: 4px;
                     width: 295px;
                 }
@@ -417,10 +343,10 @@ section{
         }
 
         &__sub-menu-list{
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-auto-flow: row;
+            grid-template-columns: repeat(auto-fill, 311px);
             gap: 24px;
-            flex-wrap: wrap;
             max-height: 261px;
             
         }
@@ -455,8 +381,6 @@ section{
             font-weight: 600;
             font-size: 16px;
             color: #fff;
-
-           
         }
     }
 
@@ -943,8 +867,8 @@ section{
 }
 
 .two-banners{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-auto-flow: column;
     width: 100%;
     margin-bottom: 24px;
     gap: 22px;
@@ -991,9 +915,7 @@ section{
     }
 
     .two-banners{
-        flex-direction: column;
-        align-items: center;
-
+        grid-auto-flow: row;
         .banner{
             max-width: none;
         }
@@ -1031,17 +953,18 @@ section{
         width: 100%;
         height: calc(100vw/2);
         max-height: 445px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
         position: relative;
         margin-bottom: 41px;
         gap: 15px;
         
         
         &-item{
-            width: calc(100% / 4.2);
-            height: calc(100% / 3.2);
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -1362,10 +1285,10 @@ section{
         
         &:not(.roadmap__phase_one){
             .container{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
                 gap: 25px 16px;
-                column-width: 200px;
-                flex-wrap: wrap;
-                align-items: stretch;
+                
             }
 
             .item{
@@ -1378,7 +1301,7 @@ section{
                 color: #778190;
                 position: relative;
                 width: 100%;
-                max-width: 576px;
+                
 
                 
 
@@ -1389,11 +1312,9 @@ section{
                 }
 
                 &__list_al{
-                    display: flex;
-                    flex-direction: column;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
                     gap: 8px 51px;
-                    flex-wrap: wrap;
-                    max-height: 100px;
 
                     li{
                     list-style: none;
@@ -1437,7 +1358,9 @@ section{
                 }
 
                 &__brands{
-                    display: flex;
+                    display: grid;
+                    grid-template-rows: 1fr 1fr;
+                    grid-template-columns: repeat(2, 1fr);
                     gap: 32px 29px;
                     flex-wrap: wrap;
                     max-width: 195px;
@@ -1640,6 +1563,10 @@ section{
             font-size: 25px;
         }
 
+        &__phase:not(.roadmap__phase_one) .container{
+            grid-template-columns: 1fr;
+        }
+
         &__phase_one .container{
             display: flex;
             flex-direction: column;
@@ -1705,7 +1632,8 @@ section{
 @media screen and (max-width:374px){
     .roadmap{
         .item__list_al{
-            max-height: none !important;
+           grid-template-columns: 1fr !important;
+          
         }
     }
 }
@@ -1736,7 +1664,8 @@ section{
 @media screen and (max-width:356px) {
     .use-all-benefits{
         .banner__buttons{
-            flex-direction: column;
+            display: grid;
+            grid-auto-flow: row;
             gap: 5px;
         }
     }
@@ -2211,3 +2140,4 @@ section{
         }
     }
 }
+
