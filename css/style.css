@@ -5,6 +5,10 @@
           box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .preloader.hide {
   opacity: 0;
   visibility: hidden;
@@ -1701,6 +1705,9 @@ section {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .roadmap__phase_one .container .roadmap__phase-item {
+    margin: 10px 0;
+  }
   .roadmap__phase_one .container .title2 {
     text-align: start;
     margin-bottom: 11px;
@@ -1787,10 +1794,9 @@ section {
 
 @media screen and (max-width: 356px) {
   .use-all-benefits .banner__buttons {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    display: -ms-grid;
+    display: grid;
+    grid-auto-flow: row;
     gap: 5px;
   }
 }

@@ -1570,6 +1570,10 @@ section{
         &__phase_one .container{
             display: flex;
             flex-direction: column;
+
+            .roadmap__phase-item {
+                margin: 10px 0;
+            }
             
             .title2{
                 text-align: start;
