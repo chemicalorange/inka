@@ -27,3 +27,26 @@ for(let item of navItems){
         
     })
 }
+
+document.querySelectorAll('.nav__sub-menu a').forEach(item => {
+    item.addEventListener('click', ()=>{
+        document.querySelector('body').classList.remove('lock')
+        nav.classList.remove('nav_active')
+        burgerMenu.classList.remove('active')
+    })
+})
+
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault()
+    
+    const blockID = anchor.getAttribute('href').substr(1)
+    
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    })
+  })
+}

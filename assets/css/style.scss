@@ -236,6 +236,9 @@ section{
             .nav__sub-menu-body{
                 width: 200px;
             }
+            .nav__sub-menu-list{
+                grid-template-rows: 1fr;
+            }
 
             a:hover{
                 .item__title::after{
@@ -344,8 +347,8 @@ section{
 
         &__sub-menu-list{
             display: grid;
-            grid-auto-flow: row;
-            grid-template-columns: repeat(auto-fill, 311px);
+            grid-auto-flow: column;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
             gap: 24px;
             max-height: 261px;
             
@@ -512,6 +515,9 @@ section{
                     .nav__sub-menu-list{
                         max-height: none;
                         padding: 0;
+                        grid-template-rows: 1fr;
+                        grid-auto-flow: row;
+                        justify-items: start;
                     }
                 }
 
