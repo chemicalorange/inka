@@ -2,6 +2,12 @@
 window.addEventListener('load', ()=>{
         document.querySelector('.preloader').classList.add('hide')
         document.querySelector('body').classList.remove('lock')
+        let pathPage = document.location.href
+        if(pathPage.includes('#')){
+          let blockID = pathPage.split('/').pop().replace('index.html#', "")
+          console.log(blockID)
+          setTimeout( scrollTo(blockID), 100)
+        }
 })
 
 
@@ -36,17 +42,28 @@ document.querySelectorAll('.nav__sub-menu a').forEach(item => {
     })
 })
 
-const anchors = document.querySelectorAll('a[href*="#"]')
+const anchors = document.querySelectorAll('a[href^="#"]')
 
 for (let anchor of anchors) {
   anchor.addEventListener('click', function (e) {
     e.preventDefault()
     
     const blockID = anchor.getAttribute('href').substr(1)
-    
-    document.getElementById(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'center'
-    })
+    scrollTo(blockID)
   })
 }
+
+const redirect = (anchor) => {
+  document.location.href = 'index.html' + anchor
+}
+
+const scrollTo = (blockID) => {
+  document.getElementById(blockID).scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  })
+}
+
+
+
+
