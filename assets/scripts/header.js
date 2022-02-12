@@ -50,6 +50,7 @@ for (let anchor of anchors) {
     
     const blockID = anchor.getAttribute('href').substr(1)
     scrollTo(blockID)
+    
   })
 }
 
@@ -58,10 +59,18 @@ const redirect = (anchor) => {
 }
 
 const scrollTo = (blockID) => {
-  document.getElementById(blockID).scrollIntoView({
-    behavior: 'smooth',
-    block: 'center'
-  })
+  if(blockID == 'roadmap'){
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }else{
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    })
+  }
+  
 }
 
 
