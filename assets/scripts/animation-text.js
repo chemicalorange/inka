@@ -8,8 +8,8 @@ for(let banner of banners){
     gsap.to(bannerContent, {
         scrollTrigger:{
             trigger: banner,
-            start: '10px center',
-            end: 'bottom',
+            start: '20px center',
+            end: "400px",
         },
         opacity:1,
         y:0,

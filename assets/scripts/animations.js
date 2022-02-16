@@ -25,7 +25,7 @@ var tl = gsap.timeline({
       scrub: true,
       pin: true,
       start: "-30px top",
-      end: "+=100%"
+      end: "+=10%"
     },
     duration: 3
   });
