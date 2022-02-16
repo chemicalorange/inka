@@ -1525,22 +1525,6 @@ box-shadow: 5px 44px 63px 7px rgba(34, 60, 80, 0.2);
         }
     }
 
-    .roadmap__phase_two{
-        .container{
-            align-items: flex-start;
-
-            .item:nth-child(1), .item:nth-child(2){
-                min-height: 369px
-            } 
-        }
-        
-
-        .item_fixed-height2{
-            min-height: 176px;
-            position: relative;
-            transform: translateY(-15px);
-        }
-    }
 
 }
 

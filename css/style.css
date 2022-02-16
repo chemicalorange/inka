@@ -1671,23 +1671,6 @@ section {
   background: #7171FF;
 }
 
-.roadmap .roadmap__phase_two .container {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-.roadmap .roadmap__phase_two .container .item:nth-child(1), .roadmap .roadmap__phase_two .container .item:nth-child(2) {
-  min-height: 369px;
-}
-
-.roadmap .roadmap__phase_two .item_fixed-height2 {
-  min-height: 176px;
-  position: relative;
-  -webkit-transform: translateY(-15px);
-          transform: translateY(-15px);
-}
-
 @media screen and (max-width: 1200px) {
   .roadmap__check_one {
     left: 10px;
