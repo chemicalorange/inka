@@ -137,6 +137,7 @@ section {
   text-transform: uppercase;
   font-size: 18px;
   margin-left: 12px;
+  margin-bottom: 5px;
 }
 
 .header {
@@ -209,6 +210,12 @@ section {
   opacity: 0;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  -webkit-box-shadow: 5px 44px 63px 7px rgba(34, 60, 80, 0.2);
+  box-shadow: 5px 44px 63px 7px rgba(34, 60, 80, 0.2);
+}
+
+.header .nav__sub-menu a {
+  color: #556174;
 }
 
 .header .nav__sub-menu li a {
@@ -459,6 +466,7 @@ section {
   }
   .header__nav {
     display: none;
+    background: white !important;
   }
   /*-------------------------------------*/
   .nav_active {
@@ -468,13 +476,13 @@ section {
     display: flex;
     top: 76px;
     left: 0;
-    background: #FBFBFE;
     padding: 16px 9px;
     width: 100%;
     border-top: 1px solid rgba(234, 234, 234, 0.99);
     min-height: calc(100vh - 76px);
     overflow-y: scroll;
     overflow-x: hidden;
+    background: #fff;
   }
   .nav_active .nav__list {
     width: 100%;
@@ -511,6 +519,8 @@ section {
     left: 0;
     top: 60px;
     padding: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
   .nav_active .nav__has-child .nav__sub-menu .nav__sub-menu-body {
     padding: 32px 20px;
@@ -605,7 +615,8 @@ section {
 .first-screen__btn {
   background: #fff;
   border: none;
-  padding: 14px 16px;
+  padding: 14px 26px;
+  font-size: 16px;
   color: #7171FF;
   font-family: Helvetica Neue;
   font-weight: bold;
@@ -641,9 +652,14 @@ section {
         -ms-flex-align: center;
             align-items: center;
   }
+  .first-screen form {
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+    width: 100%;
+  }
   .first-screen__btn {
     width: 100%;
-    max-width: 350px;
   }
 }
 
@@ -677,10 +693,15 @@ section {
     -o-object-position: top;
        object-position: top;
   }
+  .first-screen__btn {
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+  }
 }
 
 .save-your-time {
-  padding-top: 62px;
+  padding-top: 64px;
 }
 
 .save-your-time .container {
@@ -700,7 +721,7 @@ section {
 
 .save-your-time .description {
   max-width: 522px;
-  margin-bottom: 50px;
+  margin-bottom: 48px;
 }
 
 .visible, .invisible {
@@ -1014,6 +1035,8 @@ section {
   position: relative;
   margin-bottom: 41px;
   gap: 15px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .one-app__brands-item {
@@ -1264,15 +1287,16 @@ section {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
   }
   .one-app__reviews-item {
     margin-bottom: 32px;
     -webkit-transform: none !important;
             transform: none !important;
     opacity: 1 !important;
+    max-width: none !important;
   }
   .one-app__brands-item img {
     width: calc((100% / 4.2)*0.9);
@@ -1311,7 +1335,7 @@ section {
 
 .roadmap .title2 {
   color: #7171FF;
-  margin: 50px 0 30px 0;
+  margin: 59px 0 30px 0;
   text-transform: uppercase;
 }
 

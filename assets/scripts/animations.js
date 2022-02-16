@@ -35,9 +35,10 @@ tl.to(brandItems, {y:0, x:0, rotate: 0}, 1)
   .to(brandItems, {border: 'none', background: '#7171FF', boxShadow: 'none', scale: 1.3}, 2)
   .to('.one-app__brands-item img', {opacity: 0}, 2)
   .to('.one-app__logo img', {opacity: 1}, 2)
-  .to(reviewsItems, {opacity: 0}, 3)
-  .to(reviewsItems, {x:0, y:0}, 4)
-  .to(reviewsItems, {opacity: 1}, 5)
+  .to('.one-app__brands', {overflow: 'hidden'}, 3)
+  .to(reviewsItems, {opacity: 0}, 4)
+  .to(reviewsItems, {x:0, y:0}, 5)
+  .to(reviewsItems, {opacity: 1}, 6)
 
 
 let roadmapPhases = document.querySelectorAll('.roadmap__phase')
