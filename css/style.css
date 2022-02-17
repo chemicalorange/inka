@@ -212,6 +212,7 @@ section {
   transition: all 0.3s ease;
   -webkit-box-shadow: 5px 44px 63px 7px rgba(34, 60, 80, 0.2);
   box-shadow: 5px 44px 63px 7px rgba(34, 60, 80, 0.2);
+  border-radius: 20px;
 }
 
 .header .nav__sub-menu a {
@@ -2092,6 +2093,13 @@ section {
   color: #88909E;
   margin: 0 20px;
   font-size: 15px;
+}
+
+.footer .icon-Medium::before {
+  position: relative;
+  display: inline-block;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
 }
 
 @media screen and (max-width: 710px) {
