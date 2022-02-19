@@ -606,7 +606,7 @@ section {
 }
 
 .first-screen__image img {
-  width: 1166px;
+  width: 1130px;
   height: 656px;
   position: absolute;
   bottom: 0;
@@ -624,6 +624,7 @@ section {
   font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
+  min-width: 179px;
 }
 
 .first-screen .icon-paper {
@@ -680,7 +681,7 @@ section {
     overflow: hidden;
   }
   .first-screen__image {
-    width: 100%;
+    width: 100vw;
     margin-top: 73px;
     height: 461px;
     -webkit-transform: translateY(40px);
@@ -1005,6 +1006,7 @@ section {
 
 .one-app {
   background: #FBFBFE;
+  margin-bottom: 64px;
 }
 
 .one-app .title {
@@ -1312,10 +1314,10 @@ section {
   }
 }
 
-@media screen and (max-width: 333px) {
+@media screen and (max-width: 390px) {
   .one-app__logo img {
-    width: 49.42px;
-    height: 49.36px;
+    width: 27.18px;
+    height: 27.15px;
     -webkit-transform: none;
             transform: none;
   }
@@ -2180,6 +2182,10 @@ section {
   margin-bottom: 64px;
 }
 
+.about-us__image {
+  margin-bottom: 65px;
+}
+
 .about-us__image img {
   width: 100%;
   height: 100%;
@@ -2195,7 +2201,7 @@ section {
           justify-content: space-between;
   width: 100%;
   background: #FBFBFE;
-  padding: 80px;
+  padding: 113px 80px;
   text-align: start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -2289,6 +2295,10 @@ section {
 .our-team .item__exp {
   font-size: 14px;
   color: #706F6F;
+}
+
+.our-team .item__exp span {
+  color: #7171FF;
 }
 
 .our-team .item__social {
