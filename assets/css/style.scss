@@ -966,7 +966,7 @@ section{
 
 .one-app{
     background: #FBFBFE;
-    margin-bottom: 64px;
+    padding-bottom: 64px;
 
     .title{
         margin-bottom: 66px;
@@ -1226,7 +1226,7 @@ section{
     }
 }
 
-@media screen and (max-width:390px){
+@media screen and (max-width:500px){
     .one-app{
         &__logo{
             img{

@@ -1006,7 +1006,7 @@ section {
 
 .one-app {
   background: #FBFBFE;
-  margin-bottom: 64px;
+  padding-bottom: 64px;
 }
 
 .one-app .title {
@@ -1314,7 +1314,7 @@ section {
   }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 500px) {
   .one-app__logo img {
     width: 27.18px;
     height: 27.15px;
