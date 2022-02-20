@@ -2201,7 +2201,7 @@ section {
           justify-content: space-between;
   width: 100%;
   background: #FBFBFE;
-  padding: 113px 80px;
+  padding: 113px 80px 113px 80px;
   text-align: start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -2331,6 +2331,7 @@ section {
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
+    padding: 48px 20px 73px 20px;
   }
 }
 
