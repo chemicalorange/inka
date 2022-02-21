@@ -606,7 +606,7 @@ section {
 }
 
 .first-screen__image img {
-  width: 1130px;
+  width: 1140px;
   height: 656px;
   position: absolute;
   bottom: 0;
@@ -780,6 +780,12 @@ section {
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
+}
+
+.banner__image {
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  opacity: 0;
 }
 
 .banner__image img {
