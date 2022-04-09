@@ -2622,24 +2622,24 @@ section {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   background: #E1E1FF;
-  -webkit-animation: 8s 0.5s coloredCoin1 infinite linear;
-          animation: 8s 0.5s coloredCoin1 infinite linear;
+  -webkit-animation: 8s 0.4s coloredCoin1 infinite linear;
+          animation: 8s 0.4s coloredCoin1 infinite linear;
 }
 
 .first-screen .ani__wheel .round:nth-child(4) {
   top: 46px;
   right: -23px;
   background: #FDC98B;
-  -webkit-animation: 8s  1.3s coloredCoin2 infinite linear;
-          animation: 8s  1.3s coloredCoin2 infinite linear;
+  -webkit-animation: 8s  1.8s coloredCoin2 infinite linear;
+          animation: 8s  1.8s coloredCoin2 infinite linear;
 }
 
 .first-screen .ani__wheel .round:nth-child(5) {
   top: 211px;
   right: -23px;
   background: #FDF1D5;
-  -webkit-animation: 8s  2.8s coloredCoin3 infinite linear;
-          animation: 8s  2.8s coloredCoin3 infinite linear;
+  -webkit-animation: 8s  3s coloredCoin3 infinite linear;
+          animation: 8s  3s coloredCoin3 infinite linear;
 }
 
 .first-screen .ani__wheel .round:nth-child(6) {
@@ -2648,8 +2648,8 @@ section {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   background: #B9C7E9;
-  -webkit-animation: 8s  3.9s coloredCoin4 infinite linear;
-          animation: 8s  3.9s coloredCoin4 infinite linear;
+  -webkit-animation: 8s  4.2s coloredCoin4 infinite linear;
+          animation: 8s  4.2s coloredCoin4 infinite linear;
 }
 
 .first-screen .ani__wheel .round:nth-child(7) {
@@ -2664,8 +2664,8 @@ section {
   top: 46px;
   left: -28px;
   background: #FAD9D9;
-  -webkit-animation: 8s  6.5s coloredCoin6 infinite linear;
-          animation: 8s  6.5s coloredCoin6 infinite linear;
+  -webkit-animation: 8s  6.8s coloredCoin6 infinite linear;
+          animation: 8s  6.8s coloredCoin6 infinite linear;
 }
 
 .first-screen .ani .coin {
