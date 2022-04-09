@@ -73,6 +73,13 @@ const scrollTo = (blockID) => {
   
 }
 
+let modalJoin = document.querySelector('.modal-join')
+modalJoin.querySelector('.modal-join__close').addEventListener('click', ()=>{
+  modalJoin.style.visibility = 'hidden'
+  modalJoin.style.opacity = 0
+  modalJoin.style.pointerEvents = 'none'
+})
+
 
 
 

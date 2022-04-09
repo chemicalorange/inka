@@ -59,4 +59,19 @@ for (let phase of roadmapPhases){
     })
 }
 
+/*let firstScreenAnimation = document.querySelector('.first-screen__ani')
 
+const fsAnimation = () => {
+  let coin = firstScreenAnimation.querySelector('.coin')
+  let y = 0;
+  let x = 0;
+  setInterval(()=>{
+    coin.style.transform = `translate(${y}, ${x})`
+    x++
+    y++
+  }, 500)
+}
+
+fsAnimation()
+
+*/
