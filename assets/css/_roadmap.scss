@@ -1,0 +1,194 @@
+.roadmap__phase_two{
+    .item{
+        p{
+            font-weight: 600;
+            color: #556174;
+            a{
+                text-decoration-line: underline;
+                color: #7171FF;
+            }
+        }
+        .item__brands-item{
+            color: #556174;
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: flex-end;
+        }
+        &__brands{
+            margin: 24px 0 51px 0;
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-rows: auto auto auto;
+            row-gap: 32px;
+            column-gap: 64px;
+        }
+        padding-bottom: 53px !important;
+    }
+    
+}
+
+.phase_three{
+   .container{
+       grid-template-columns: auto minmax(100px, 409px) !important;
+       column-gap: 22px !important;
+   }
+    .roadmap{
+        &__right{
+            max-width: 409px;
+            display: grid;
+            row-gap: 17px;
+            p{
+                max-width: 297px !important;
+            }
+        }
+        &__left{
+            display: grid;
+            width: 100%;
+            row-gap: 24px;
+        }
+        .item{
+            p{
+                color: #778190 !important;
+                font-weight: 600;
+            }
+        }
+        &__steps{
+            display: flex;
+            .item{
+                background: none;
+                padding: 0;
+                position: relative;
+                .arrow{
+                    position: absolute;
+                }
+                &:nth-child(1) .arrow{
+                    right: 12px;
+                    top: 30px;
+                }
+                &:nth-child(2) .arrow{
+                    right: 9px;
+                    top: 63px;
+                }
+                &__text{
+                    display: flex;
+                    height: 63px;
+                    margin-top: auto;
+                }
+                &__number{
+                    font-family: 'Helvetica Neue';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 20px;
+                    color: #7171FF;
+                }
+                &__desc{
+                    font-family: 'Helvetica Neue';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 150%;
+                    color: #556174;
+                    max-width: 182px !important;
+                    margin-left: 6px;
+                    margin-top: 3px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1040px) {
+    .phase_three{
+        .container{
+            grid-template-columns: 1fr !important;
+        }
+        .roadmap{
+            &__right{
+                max-width: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:736px) {
+    .phase_three{
+        .roadmap{
+            &__steps{
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                row-gap: 67px;
+                .item{
+                    &__desc{
+                        max-width: 268px !important;
+                        margin-top: 0;
+                    }
+                    &__text{
+                        margin-top: 24px;
+                    }
+                    .arrow{
+                        transform: rotate(90deg);
+                        right: auto !important;
+                        left: 60px;
+                        top: auto !important;
+                        bottom: -50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:648px) {
+    .roadmap__marker{
+        width: 32.03px;
+        height: 32px;
+        top: -20px !important;
+    }
+    .roadmap__phase_two{
+        .item{
+            padding: 26px 13px !important;
+            &__brands{
+                column-gap: 11px;
+                row-gap: 18px;
+                &-item{
+                    font-size: 16px;
+                    img{
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:648px) {
+    .roadmap__phase_two{
+        .item{
+            padding: 26px 13px !important;
+            &__brands{
+                column-gap: 11px;
+                row-gap: 18px;
+                grid-auto-flow: row;
+                grid-template-columns: auto auto;
+
+                }
+            }
+        }
+}
+
+@media screen and (max-width:282px) {
+    .roadmap__phase_two{
+        .item{
+            &__brands{
+                grid-template-columns: auto;
+
+                }
+            }
+        }
+}

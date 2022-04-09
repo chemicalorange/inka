@@ -1294,7 +1294,7 @@ section{
         }
 
         &_two{
-            align-items: flex-end;
+            align-items: flex-end !important;
             position: absolute;
             right: 0;
             top: -65px;
@@ -1316,8 +1316,8 @@ section{
 
         .roadmap__marker{
             position: absolute;
-            top: -25px;
-            left: -50px;
+            top: -34px;
+            left: -60px;
             z-index: 10;
         }
 
@@ -1341,12 +1341,7 @@ section{
                 color: #778190;
                 position: relative;
                 width: 100%;
-                
-
-                
-
-                
-                
+            
                 &__list-item{
                     list-style: inside;
                 }
@@ -1393,19 +1388,7 @@ section{
                     margin: 8px 0 24px 0;
                 }
 
-                &:nth-child(2) .item__brands{
-                    gap: 14.22px;
-                }
-
                 &__brands{
-                    display: grid;
-                    grid-template-rows: 1fr 1fr;
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 32px 29px;
-                    flex-wrap: wrap;
-                    max-width: 195px;
-                    margin: 31px 0;
-
                     &-item{
                         color: #556174;
                         font-weight: 600;
@@ -1440,7 +1423,7 @@ section{
             
 
             .roadmap__marker{
-                left: calc((100vw - 1200px)/2 + 50px);
+                left: calc((100vw - 1200px)/2 + 80px);
                 content: "";
             }
 
@@ -1581,7 +1564,7 @@ section{
     }
 }
 
-@media screen and (max-width:858px){
+@media screen and (max-width:1148px){
     .roadmap{
         .title2{
             font-size: 25px;
@@ -2264,3 +2247,4 @@ section{
 }
 
 @import 'first-screen';
+@import 'roadmap';
