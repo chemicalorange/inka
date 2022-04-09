@@ -3079,6 +3079,9 @@ section {
   .first-screen__title {
     font-size: 31px;
   }
+  .first-screen__title span.reverted {
+    margin-left: -6px;
+  }
   .first-screen__subtitle {
     text-align: center;
   }

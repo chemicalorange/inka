@@ -403,6 +403,9 @@
     .first-screen{
         &__title{
             font-size: 31px;
+            span.reverted{
+                margin-left: -6px;
+            }
         }
         &__subtitle{
             text-align: center;
