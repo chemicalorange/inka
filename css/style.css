@@ -2036,18 +2036,23 @@ section {
   font-size: 17px;
 }
 
-.footer__social li a:last-child {
-  margin-left: 33px;
+.footer__social li:first-child a:last-child {
+  margin-top: 2px;
 }
 
 .footer__social a {
-  color: #556174;
+  color: #556174 !important;
   font-size: 18px;
 }
 
 .footer__list-item {
   margin-bottom: 24px;
   font-size: 14px;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  -webkit-column-gap: 1px;
+          column-gap: 1px;
 }
 
 .footer__list-item a {
