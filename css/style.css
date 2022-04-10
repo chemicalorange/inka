@@ -140,6 +140,10 @@ section {
   margin-top: 1px;
 }
 
+.header .nav__list > .header__button:hover::before {
+  visibility: hidden;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -395,6 +399,11 @@ section {
   color: #7171FF;
 }
 
+.header.white .header__button a {
+  background: #7171FF;
+  color: #FFFFFF !important;
+}
+
 .header.white .header__menu div, .header.white .header__menu::before, .header.white .header__menu::after {
   background: #7171FF;
 }
@@ -477,6 +486,9 @@ section {
     background: #FBFBFE !important;
   }
   /*-------------------------------------*/
+  .header .nav__list > .header__button {
+    display: none;
+  }
   .nav_active {
     position: absolute;
     display: -webkit-box;
@@ -2414,7 +2426,7 @@ section {
   width: 100%;
   position: fixed;
   left: 0;
-  top: 88px;
+  top: 87px;
   background: #FDC98B;
   z-index: 19;
   padding: 13px 0;

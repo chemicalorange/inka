@@ -135,7 +135,9 @@ section{
     }
 
 }
-
+.header .nav__list > .header__button:hover::before{
+      visibility: hidden;      
+}
 .header{
     position: fixed;
     top: 0;
@@ -375,7 +377,12 @@ section{
         .logo{
             color: $violet;
         }
-
+        .header__button{
+            a{
+                background: $violet;
+                color: #FFFFFF !important;
+            }
+        }
         .header__menu{
             div, &::before, &::after{
                 background: $violet;
@@ -469,7 +476,9 @@ section{
 
 
     /*-------------------------------------*/
-
+    .header .nav__list > .header__button{
+        display: none;      
+  }
     .nav_active{
         position: absolute;
         display: flex;
