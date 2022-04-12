@@ -38,6 +38,9 @@ tl.to(brandItems, {y:0, x:0, rotate: 0}, 1)
   .to('.one-app__brands', {overflow: 'hidden'}, 3)
   .to(reviewsItems, {opacity: 0}, 4)
   .to(reviewsItems, {x:0, y:0}, 5)
+  .to(reviewsItems[0].querySelector('.item__text'), {textContent: "“Thanks to Inka I can use any defi service in one app “"}, 5)
+  .to(reviewsItems[1].querySelector('.item__text'), {textContent: "“It is really easy to use Inka app”"}, 5)
+  .to(reviewsItems[2].querySelector('.item__text'), {textContent: "“Now I can track all my investment in one app“"}, 5)
   .to(reviewsItems, {opacity: 1}, 6)
 
 

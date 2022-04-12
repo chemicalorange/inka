@@ -171,7 +171,7 @@ section {
 }
 
 .header .nav .btn {
-  padding: 10px 33px;
+  padding: 13px 29px;
 }
 
 .header .nav a:hover .nav__title, .header .nav a:hover .item__title {
@@ -1911,6 +1911,7 @@ section {
   top: 0;
   left: 0;
   z-index: -1;
+  margin-left: -10px;
 }
 
 .cta .description {
