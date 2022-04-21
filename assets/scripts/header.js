@@ -80,6 +80,3 @@ modalJoin.querySelector('.modal-join__close').addEventListener('click', ()=>{
   modalJoin.style.pointerEvents = 'none'
 })
 
-
-
-

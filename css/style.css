@@ -278,6 +278,53 @@ section {
   font-size: 12px;
 }
 
+.header .nav__sub-menu_features {
+  right: 0;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+.header .nav__sub-menu_features .nav__sub-menu-body {
+  max-width: 1151px;
+}
+
+.header .nav__sub-menu_features .nav__sub-menu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header .nav__sub-menu_features .video {
+  margin-top: -46px;
+}
+
+.header .nav__sub-menu_features .video__title {
+  color: #556174;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.header .nav__sub-menu_features .video__container {
+  width: 391px;
+  height: 221px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.header .nav__sub-menu_features .video__container iframe {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.header .nav__sub-menu_features .video__container iframe .ytp-chrome-top {
+  opacity: 0 !important;
+}
+
 .header .nav__sub-menu_investors {
   overflow: hidden;
 }
@@ -543,6 +590,22 @@ section {
             box-shadow: none;
     background: #FBFBFE;
   }
+  .nav_active .nav__has-child .nav__sub-menu_features {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  .nav_active .nav__has-child .nav__sub-menu_features .video {
+    margin-top: 20px;
+  }
+  .nav_active .nav__has-child .nav__sub-menu-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .nav_active .nav__has-child .nav__sub-menu .nav__sub-menu-body {
     padding: 32px 20px;
     -webkit-box-shadow: none;
@@ -670,6 +733,12 @@ section {
         }
     }
 }*/
+@media screen and (max-width: 422px) {
+  .header .nav__sub-menu_features .video__container {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .title {
     font-size: 33.2px;
@@ -1858,6 +1927,17 @@ section {
   margin-bottom: 32px;
 }
 
+.cta__list {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  -ms-grid-columns: 131px 145px;
+      grid-template-columns: 131px 145px;
+  -ms-grid-rows: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-column-gap: 34px;
+}
+
 .cta .cta__list-item {
   margin-bottom: 35px;
   display: -webkit-box;
@@ -1873,7 +1953,7 @@ section {
   font-family: icomoon;
   color: #7171FF;
   font-size: 12px;
-  margin-left: 17px;
+  margin-left: auto;
 }
 
 .cta .cta__list a {
@@ -1887,6 +1967,10 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.cta .cta__list a img {
+  margin-right: 19px;
 }
 
 .cta .cta__list a span {
